@@ -1,0 +1,8 @@
+Notes
+
+- Be careful when setting a variable equal to a reference vs an actual value
+- To get the length of a row we can do matrix.length
+- To get the length of a column we can do matrix[0].length
+- Matrix is specified in terms of row then columns
+- Bit vector is more space efficient than a boolean array, although both
+  accomplish the same task

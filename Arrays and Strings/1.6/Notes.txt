@@ -1,0 +1,12 @@
+Notes
+
+This question was very hard and was typed up from solutions. Below are some lessons learned.
+
+- Implement the rotation in layers, work with the top half of the matrix
+- Perform a circular clockwise rotation
+- Perform swap index by index starting with the outtermost layer and working your way inwards
+- Algorithm will operate in O(n^2) since we must touch all elements
+
+- You can get the length of a 2D matrix column simply by doing matrix.length
+- You can get the length of a 2D matrix row simply by doing matrix[0].length
+- 2D matrix is [row][column]

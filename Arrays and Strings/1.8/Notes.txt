@@ -1,0 +1,17 @@
+Notes
+
+This problem used a special property when dealing with rotations.
+
+The property is as follows:
+
+- A rotation occurs around as specific point, namely z.
+  This means that the first part of the string, call it x, is from 0 to z.
+  The remaining part of the string, call it y, is from z to the end of the string.
+
+- The rotated string is yx where as the original is xy
+
+Now to check for a rotation we can use isSubstring on xyxy since this the original word repeated twice.
+
+Since a rotation is just the latter half of the word followed by the former half, calling is isSubstring
+on the word repeated will return whether or not the string in question is a rotation.
+
