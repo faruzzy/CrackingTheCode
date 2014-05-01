@@ -36,6 +36,7 @@ public class InterviewQuestion {
 			}
 		}
 
+		// Loop will miss last character, need to manually account for it
 		stringBuffer.append(last);
 		stringBuffer.append(count);
 
