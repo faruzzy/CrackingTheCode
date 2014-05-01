@@ -1,0 +1,12 @@
+Notes
+
+String.valueOf(int) will return the string representation of an int.
+
+Character.forDigit(int) will return the char representation of an int. 
+Note that this is limited to digits 0 through 9.
+
+StringBuffers are really good for building strings. Much better than
+character arrays. No need to manage indexes. StringBuffer can also
+handle any size int input, no need for Character.forDigit(int).
+
+We can convert from char to int easily but not int to char.
