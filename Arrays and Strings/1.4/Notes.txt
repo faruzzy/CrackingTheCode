@@ -1,0 +1,13 @@
+Notes
+
+- Remember to check error cases and return or throw exceptions accordingly
+- To parse an integer from command line arguments we must use Integer.parse()
+- A hardcoded char must be in single quotes not double quotes.
+- Java Strings are immutable, even a replace operation results in a new String being created
+
+// Correct
+Char a = 'a';
+
+// Incorrect
+Char a = "a";
+
