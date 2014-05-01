@@ -1,0 +1,17 @@
+Notes
+
+- java.util.Sort(Array) can be used to sort an array
+- Be conservative about allocating char[], you can usually work the string itself
+- String.charAt(index) can be used to access a character in a String
+
+The questions below determine the size of the character array.
+
+- Ask about the character set, ASCII vs. Unicode
+- Ask if whitespace matters
+- As if capitalization matters
+
+You can perform fast enumeration per character of a string.
+
+for (Char c : String.toCharArray()) {
+	
+}
