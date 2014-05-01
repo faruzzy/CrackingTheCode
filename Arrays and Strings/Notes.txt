@@ -1,0 +1,56 @@
+Array questions and string questions are often interchangable.
+Techniques used to solve string questions can be applied to array questions and vice versa.
+
+Hash Tables
+
+- Maps keys to values to provide highly effecient lookup
+- A very simple implementation of a hash table is an array and hash function
+- One way to address to collisions is to store a LinkedList of objects at each hash index
+
+- Hash tables can be implemented with binary search trees
+
+Below is a simple example of working with a HashMap.
+
+public HashMap<Integer, Student> buildMap(Student[] students) {
+	HashMap<Integer, Student> hashMap = new HashMap<Integer,Student>();
+	for (Student student : students) {
+		hashMap.put(student.getID(), student);
+	}
+	return map;
+}
+
+Array List (Dynamically Resizing Array) 
+
+As implied by the title, an ArrayList is simply an Array the dynamically resizes itself.
+Typically when the array becomes full it will double in size.
+We also get access to List Interface methods to access our array with.
+
+Below is a simple example of working with an ArrayList.
+
+public ArrayList<String> merge(String[] words, String[] more) {
+	ArrayList<String> sentence = new ArrayList<String>();
+	for (String word : words) sentence.add(word);
+	for (String extraWord : more) sentence.add(extraWord);
+	return sentence;
+}
+
+String Buffer
+
+StringBuffer is a useful utility that avoid O(n^2) run time when concatenating a list of strings.
+
+Below is some sample code that runs in O(n^2) due to way the string sentence is being built.
+
+public String joinWords(String[] words) {
+	String sentence = "";
+	for (String word : words) sentence += word;
+	return sentence;
+}
+
+Below is some sample code using StringBuffer that reduces the run time to O(n).
+
+public String joinWords(String[] words) {
+	StringBuffer stringBuffer = new StringBuffer();
+	for (String word : words) stringBuffer.append(word);
+	return stringBuffer.toString();
+}
+
