@@ -1,0 +1,1 @@
+Java generics (<Integer, Integer>) will not work with primiatives, only types.
