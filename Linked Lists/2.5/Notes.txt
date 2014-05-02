@@ -1,0 +1,11 @@
+Notes
+
+.size() is used to get the length of a LinkedList
+
+Below is an example of computing the sum of two numbers didgit by didgit.
+This will only work when the didgits are read in forward order, not reverse.
+
+for (int i = 0; i < firstOperand.size(); i++) {
+	result *= 10;
+	result += firstOperand.get(i) + secondOperand.get(i);
+}
