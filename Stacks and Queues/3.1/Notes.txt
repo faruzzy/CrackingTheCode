@@ -1,0 +1,10 @@
+Notes
+
+One approach to using a single array to implement three stacks is to have three fixed length stacks. 
+The downside of this approach is that if one stack gets full we can't allocate any more space to it.
+
+A more complicated approach would be to dynamically resize the stacks as they grow. This would involves shifting elements in the array and likely using a circular buffer.
+
+- If method throws an exception then you must have try/catch block or declare that the
+  method throws an exception.
+

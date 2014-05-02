@@ -1,0 +1,8 @@
+Notes
+
+Instead of trying to implement an instance of Stack inside stack, a better approach would have
+been to extend the Stack class and have a stack within that class.
+
+We could then make calls super.pop(), super.push(value) to push and pop data onto the stack
+while maintaining the minimum stack within the class that extends stack. This would have been
+much easier and would have avoided all the null checks.
