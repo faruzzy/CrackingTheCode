@@ -1,0 +1,13 @@
+Notes
+
+To detect a collision in a linked list we use two pointers.
+The first pointer has a jump size of one. 
+The second pointer has a jump size of two.
+If they meet before the list ends then a loop occurs in the list.
+
+To detect where a loop occurs in a list we use two pointers.
+The first pointer has a jump size of one.
+The second pointer has a jump size of two.
+When they meet we reset the first pointer to the head of the list.
+We set the jump size of the first pointer to one.
+When they meet again this is where the start of the loop occurs in the list.
