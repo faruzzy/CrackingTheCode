@@ -1,0 +1,65 @@
+Stacks
+
+Stack uses a last in first out ordering (LIFO). The most recent item added to a stack
+is the first to be removed. Think of a stack like a stack of cafeteria plates.
+
+A stack can be implemented using a linked list. A stack and a linked list are essentially
+the same thing except a stack prevents the user from peaking at items below the top node.
+
+Below is a sample implementation of a stack.
+
+class Stack {
+	Node top;
+
+	Object pop() {
+		if (top != null) {
+			Object item = top.data;
+			top = top.next;
+			return item;
+		}
+		return null;
+	}
+
+	void push (Object item) {
+		Node t = new Node(item);
+		t.next = top;
+		top = t;
+	}
+
+	Object peek() {
+		return top.data;
+	}
+}
+
+Queues
+
+A queue is a first in first out ordering. Items are removed in the order they were added.
+Think of a queue as a line to a roller coaster.
+
+A queue can be implemented with a linked list with new items added to the tail of the list.
+Recall that the add method of java.util.LinkedList adds items to the end of the list.
+
+Below is some sample code for implementing a queue.
+
+class Queue {
+	Node first, last;
+
+	void enqueue(Object item) {
+		if (first == null) {
+			last = new Node(item);
+			first = last;
+		} else {
+			last.next = new Node(item);
+			last = last.next;
+		}
+	}
+
+	Object dequeue() {
+		if (first == null) return null;
+
+		Object item = first.data;
+		first = first.next;
+		return item;
+	}
+
+}
