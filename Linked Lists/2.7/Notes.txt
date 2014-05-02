@@ -1,0 +1,25 @@
+Notes
+
+To detect if a linked list is a palindrome we can use a combination of the runner technique and a stack.
+
+The runner technique is used to determine the middle of the list.
+We advance one runner at one step.
+We advance the other runner at two steps.
+
+As the first runner advances we push items onto the stack.
+Once the second runner reaches the end of the linked list we start popping off the stack and
+checking if the next element the first runner sees matches what's on the stack.
+
+If the slow runner does not match whats on the stack then the list is not a palindrome.
+If the slow runner makes it to the end and matches everything that's on the stack then the list is a palindrome.
+
+If the list has an odd number of elements we have to be careful.
+
+The proper way to advance a runner is as follows:
+
+while (fastRunner != null && fastRunner.next != null) {
+	fastRunner = fasterRunner.next.next;
+	slowRunner = slowRunner.next;
+}
+
+Side note: In java integer division will always result in the decimal getting cut off or the result getting 'floored'.
