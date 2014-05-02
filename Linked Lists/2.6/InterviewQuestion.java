@@ -10,10 +10,15 @@ public class InterviewQuestion {
 		Node head = linkedList.head;
 		Node runner = linkedList.head;
 
-		while (head != runner){
+		
+		while (runner != null && runner.next != null){
 			head = head.next;
 			runner = runner.next.next;
+			if (head == runner) break;
 		}
+
+		// Error check, was there a llop in the linked list?
+		if (runner == null || runner.next == null) return null;
 
 		head = linkedList.head;
 
@@ -22,6 +27,7 @@ public class InterviewQuestion {
 			runner = runner.next;
 		}
 
+		// Both pointers now point to the start of the loop
 		return head;
 	}
 }
