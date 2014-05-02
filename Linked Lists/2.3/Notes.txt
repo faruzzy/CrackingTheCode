@@ -1,0 +1,7 @@
+This question is not obvious at first.
+
+However this is a great tip to remember! 
+
+To remove a node from a list using the current node: 
+- Copy the next node's data to the current node
+- Set the current node's next pointer the the next node's next pointer.
