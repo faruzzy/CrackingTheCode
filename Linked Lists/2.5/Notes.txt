@@ -1,5 +1,9 @@
 Notes
 
+When working with a problem like this the size of the numbers to be added may be an issue.
+If didgits are in reverse order this can be solved recursivly.
+If digits are in forward order padding is required.
+
 .size() is used to get the length of a LinkedList
 
 Below is an example of computing the sum of two numbers didgit by didgit.
