@@ -6,3 +6,5 @@ been to extend the Stack class and have a stack within that class.
 We could then make calls super.pop(), super.push(value) to push and pop data onto the stack
 while maintaining the minimum stack within the class that extends stack. This would have been
 much easier and would have avoided all the null checks.
+
+Also note, we can't declare an instance of a class inside itself or we get StackOverflow, duh.
