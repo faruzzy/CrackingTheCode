@@ -1,0 +1,9 @@
+Notes
+
+- import java.util.ArrayList for an array list
+- import java.util.Stack for a stack
+
+This will perform a pop on a given stack but will not perform rollover. This is to improve
+the time complexity of pop over large datasets. If roll over were implemented then
+items would have to be shifted across stacks. As is SetOfStacks is capable of correctly managing
+stack indexes and sizes after a popAt(index) call.
