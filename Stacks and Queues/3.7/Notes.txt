@@ -1,0 +1,8 @@
+- java.util.LinkedList.size() is used to get the size of a LinkedList
+- We can iterate through a string of linked lists using fast enumeration
+- An abstract class can not be instantiated but may contain method definitions
+  that the subclasses is allowed to call
+
+ Note that we could have reduced the run time of dequeue cat and dequeue dog by maintaining two separate
+ queues and associating a time stamp with each animal. On a dequeueAny() we would then peak at both
+ heads of each list and pop the oldest.
