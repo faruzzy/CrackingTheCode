@@ -1,0 +1,174 @@
+Tree and graph questions contain a lot of ambiguous details. Be sure to ask a lot of questions
+to clarify your assumptions.
+
+Binary Tree vs. Binary Search Trees
+
+- Be sure to ask whether the tree is a binary tree or a binary search tree
+- A binary search tree will have the property that the left child must be less than the parent
+  and the right child must be greater than the parent
+
+Balanced vs. Unbalanced Trees
+
+Balancing a tree implies that the depths of subtrees will not vary by a certain amount. It
+does not mean that the left and right subtrees are the same size. 
+
+If the tree is unbalanced be sure to describe the performance of your algorithm in terms
+of worst and best case times.
+
+Full and Complete Trees
+
+Full and complete trees are trees in which all leaves are at the bottom of the tree and 
+all non-leaf nodes have exactly two children. Full and complete trees are extremly rare
+as they must have exactly 2^n - 1 nodes to meet this condition.
+
+In-Order Binary Tree Traversal
+
+Below is some sample code that implements in-order binary tree traversal.
+
+public void inOrderTraversal(Node root) {
+	if (root == null) return;
+	inOrderTraversal(root.left);
+	process(root);
+	inOrderTraversal(root.right);
+}
+
+Pre-Order Binary Tree Traversal
+
+Below is some sample code that implements pre-order binary tree traversal.
+
+public void preOrderTraversal(Node root) {
+	if (root == null) return;
+	process(root);
+	preOrderTraversal(root.left);
+	preOrderTraversal(root.right);
+}
+
+Post-Order Binary Tree Traversal
+
+Below is some sample code that implements post-order binary tree traversal.
+
+public void postOrderTraversal(Node root) {
+	if (root == null) return;	
+	postOrderTraversal(root.left);
+	postOrderTraversal(root.right);
+	process(root)
+}
+
+Tries
+
+A trie is a variant of an n-ary tree in which characters are stored at each node. Each
+path down the tree may represent a word. 
+
+Graph Traversal
+
+To perform graph traversal we use breadth first search or depth first search.
+
+Depth first search is easiest if we want to visit every node in the graph, or at least visit
+every node until we find what we are looking for. However if we have a very large tree and want to quit
+when we get too far away from the root node depth first search is problematic. In this scenario breadth
+first search is prefered. 
+
+Depth First Search: A tree/graph traversal technique
+
+In depth first we visit a node, r, then we iterate through each of r's adjacent nodes. When we 
+visit a node n that is 	adjacent to r, we visit all of n's adjacent nodes before going onto 
+r's other adjacent nodes. That is n is exhaustivly searched before r moves onto searching its
+other children.
+
+Note that pre-order traversal is a form of depth first search. The key difference between a
+pre-order traversal and depth first search is that when we implement depth first search for 
+a graph we must check if the node has been visited. If we don't do this we can get
+stuck in an infinite loop if the graph has cycles.
+
+Below is a sample implementation of depth first search:
+
+/**
+ * Depth first search algorithm for a binary tree. Note that it is the same
+ * as pre-order traversal. Since we are working with a tree we don't need
+ * to check if a node has been visited or indicated that we've visted one.
+ */
+public Node depthFirstSearchTree(Node root, value toBeFound) {
+	if (root == null) return;
+
+	if (root.value = toBeFound) return root;
+
+	depthFirstSearch(root);
+	depthFirstSearch(root.left);
+	depthFirstSearch(root.right);
+}
+
+/**
+ * Depth first search for a graph. Since a graph may have cycles
+ * we need to indicate if we've been to a node to prevent infinite
+ * looping on said node.
+ */
+public Node depthFirstSearchGraph(Node root, value toBeFound) {
+	if (root == null || root.visited) return;
+	
+	root.visited = true;
+
+	if (root.value == value toBeFound) return root;
+	for (Node n : root.adjacent()) {
+		if (n != visited) depthFirstSearch(n);
+	}
+}
+
+Breadth First Search: A tree/graph traversal technique
+
+Breadth first search is much less intuitive than depth first search on a graph. Recall that depth first search on a graph was simply binary tree pre-order traversal with the addition of managing the visited
+state of nodes.
+
+In breadth first search we must also manage the visited state of nodes. Since the graph may contain
+cycles and we don't want to infinite loop.
+
+In breadth first search we visit each of a node r's adjacent nodes before searching any of r's grandchildren.
+An iterative solution using a queue works best.
+
+Note that if we implement breadth first search on a binary search tree we don't need to manage the visited state of nodes since there are no cycles in a tree.
+
+/**
+ * Here is an implementation of breadth first search for a graph.
+ * Note that we are required to manage whether we've visited a node
+ * since there maybe cycles in a graph and this could put us in an infinite loop;
+ */
+public Node breadthFirstSearchGraph(Node root, int toBeFound) {
+	if (root.value == toBeFound) return root;
+
+	Queue queue = new Queue();
+	root.visited = true;
+	queue.enqueue(root); 
+
+	while (!queue.isEmpty) {
+		Node r = queue.dequeue();
+		for (Node n : r.adjacent()) {
+			if (n.visited) continue;
+			n.visited = true;
+			if (n.value == toBeFound) return n;
+			queue.enqueue(n);
+		}
+	}
+}
+
+/**
+ * Here is an implementation of breadth first search for a tree.
+ * Note that we are not required to manage whether we've visited a node
+ * or not since there are no cycles in a tree.
+ */
+public Node breadthFirstSearchTree(Node root, int toBeFound) {
+	Queue queue = new Queue();
+
+	if (root.value == toBeFound) return root;
+
+	queue.enqueue(root);
+
+	while(!queue.isEmpty()) {
+		Node n = queue.dequeue();
+		for (Node f : n.adjacent()) {
+			if (f.value == toBeFound) return f;
+			queue.enqueue(f);
+		}
+	}
+}
+
+If you are ever asked to implement breadth first search the key thing to
+remember is the use of the queue the rest of the algorithm comes from this fact.
