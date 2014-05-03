@@ -1,0 +1,7 @@
+Notes
+
+- We could have implemented this better using a lazy approach. We don't need to constantly
+  copy elements back and forth between stacks. Only when the second dequeueing stack is empty
+  is it nessicary to copy elements over from the queueing stack.
+
+Stack.isEmpty() can be used to check if java.util.Stack has elements
