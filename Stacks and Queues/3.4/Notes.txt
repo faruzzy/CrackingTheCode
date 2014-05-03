@@ -2,7 +2,7 @@ The key to this problem is in the pseduocode.
 
 First we want to move n-1 disks from origin to buffer using destination as a buffer.
 Then we want to move the remaining disk from origin to destination.
-Lastly we want to remove the remaning n-1 disks from buffer to destination using origin as a buffer.
+Lastly we want to remove the remaning n-1 disks from buffer to destination using origin as a buffer.	
 
 moveDisks(int numberOfDisks, Tower source, Tower buffer, Tower destination) {
 	
