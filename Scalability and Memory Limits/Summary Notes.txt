@@ -1,0 +1,39 @@
+The Step-by-Step Approach:
+
+Step 1: Make Believe
+
+Pretend that the data can fit onto one machine and there are no memory limitations.
+How would you solve the problem? The answer to this question will provide the general
+outline for your solution.
+
+Step 2: Get Real
+
+Go back to the original problem, how much data can you actually fit on one machine?
+What kind of problems will you incur by splitting the data up? Common problems include
+figuring out how to logically divide the data up, and how one machine would identify
+where to lookup a different peice of data.
+
+Step 3: Solve Problems
+
+Solve the problems, poke holes in your own solution as you do this
+
+How to divide up data:
+
+1. By order of appearance: We can simply divide up data according to when data arrives.
+As the amount of data exceeds the storage of one machine we can allocate additional machines.
+This has the advantage of never using more machines than are necessary. However this may result
+in a large/complicated lookup table.
+
+2. By hash value: Another approach is to store the data on the machine corresponding to the
+hash value of the data. This can be done by picking a key related to the data, hashing the key,
+mod the hash value by the number of machines and store the data on the machine with that value.
+
+3. By actual value: While distributing data across machines by hash value resulted in an arbitrary
+distribution, by considering the meaning of data we may be able to reduce system latency. 
+
+For example: Consider that you're designing a system for a social networking website. While someone
+in Mexico may have friends located in other countries, it is likely most of their friends are in Mexico.
+By keeping Mexicans on one machine we might save machine hops when rendering a user's friends.
+
+4. Arbitrarily: Data gets arbitrarily broken up and we implement a lookup table to identify which
+machine holds which peice of data. 
