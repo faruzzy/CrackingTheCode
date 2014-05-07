@@ -1,0 +1,16 @@
+Give a list of a millions of documents, how would you find all documents that contain a list of words? The words do not need to appear in any particular order, but they must be complete words. That is "book" does not match "bookkeeper".
+
+Step 1: Solve the Problem Without Scale
+
+Pretend we just had a few dozen documents. We could use each word contain in the document as a hash key and make the document that contains it a hash value. 
+
+Step 2: Analyze problems introduced by your non-scaled solution
+
+Since we have millions of documents we probably need to divide our documents across many machines. We also may not be able to fit the entire hash table on one machine.
+
+1. How will we divide up our hash table? We could divide it up by keyword, such that a given machine will contain the full document list for a given keyword. 
+2. Once we decide how to divide up the data we may need to process a document on one machine and push the results off to other machines.
+3. We will need a way of knowing which machine is holding a particular peice of data. What does this lookup table look like and where is it stored?
+
+Step 3: Solve problems introduced by your non-scaled solution
+

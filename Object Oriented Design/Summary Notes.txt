@@ -1,0 +1,97 @@
+The goal is to illustrate that you are capable of creating elegant, maintainable
+object oriented code. 
+
+How to Approach Object Oriented Design Questions:
+
+Step 1: Handle Ambiguity
+
+A developer who just codes something without understanding what they're expected to
+create is wasting the company's time and money and may create more serious issues.
+Ask a lot of questions.
+
+When asked an object oriented design question inquire who is going to use it and
+what it is going to be used for. Ask the 6 W's: who, what, when, where and why.
+
+Example: Given an object oriented design for a coffee maker.
+- Your coffee maker might be an industrial machine designed to be used in restaurants
+  that serve hundreds of customers per hour and making dozens of different coffee products.
+- Your coffee maker might be a very simply machine that is to be used for the elderly and as 
+  such is only required to make black coffee.
+
+Use cases for the design will significantly impact you design decisions.
+
+Step 2: Define Core Objects
+
+Now that you know what you are designing you can begin to define the core objects required
+in the design.
+
+Example: Design classes for a restaurant. Our core objects may be things like Table, Guest, Party,
+Order, Meal, Employee, Server, Host
+
+Step 3: Analyze Relationships
+
+Now that we have our core objects we want to analyze the relationships between these objects.
+Some good questions to consider are listed below.
+
+- Which objects are members of other objects. 
+- Do any classes inherit from others?
+- Are the relationships between classes one-to-one or one-to-many
+
+Example: 
+
+- Party should have an array of Guests
+- Server and Host inherit from Employee
+- Each Table has one Party, but each Party may have multiple tables
+- There is one Host for the Restraunt
+
+Talk to your interviewer as you determine relationships in order to determine how general
+purpose your design should be.
+
+Step 4: Investigate Actions
+
+You should now have the basic outline of your object oriented design and the relationships between
+objects in your design. We now need to consider the key actions objects will take and how they will
+affect other objects. You may find you have forgotten objects or need to modify your design.
+
+Design Patterns
+
+Singleton Class
+
+The Singleton pattern ensures that a class has only one instance and ensures global access to the
+instance through the application. An example is included below:
+
+public class Restaurant {
+	private static Restaurant _instance = null;
+
+	public static Restaurant getInstance() {
+		if (_instance == null) _instance = new Restaurant();
+		return _instance;
+	}
+
+	/* In implementing the singleton pattern we have a private
+	 * constructor to prevent instantiation. Hence the getInstance() method
+	 * must be used to obtain an instance.
+	 */
+	private Restaurant() {
+
+	}
+}
+
+Factory Method
+
+The factory method offers an interface for creating an instance of a class, with its subclasses
+deciding which class to instantiate. This can be implemented by having the creation class be declared
+as abstract and not providing an implementation for the factory method. Or, the creator class can be a
+concrete class that provides an implementation for the factory method. In the later class the factory
+method would take a parameter specify which class to instantiate.
+
+public class CardGame {
+	public static CardGame createCardGame(GameType type) {
+		if (type == GameType.Poker) {
+			return new PokerGame();
+		}  else if (type == GameType.BlackJack) {
+			return new BlackJackGame();
+		}
+		return null;
+	}
+}
