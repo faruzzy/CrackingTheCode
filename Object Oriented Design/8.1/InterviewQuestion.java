@@ -52,7 +52,7 @@ public abstract class Card {
 		faceValue = c;
 	}
 
-	public abstract intValue();
+	public abstract int value();
 
 	public Suit suit() { return suit; }
 
@@ -80,8 +80,18 @@ public class Hand <T extends Card> {
 	}
 }
 
+public class BlackJackHand extends Hand<BlackJackCard> {
+
+}
+
+public class BlackJackCard extends Card {
+	public abstract int value() {
+		// Implement here
+	}
+}
+
 /**
- * Factory design pattern below.
+ * Depending on the generality of our design the factory design pattern may also be useful.
  */
 public class Game {
 	public Game(Players player) {
