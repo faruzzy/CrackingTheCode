@@ -1,0 +1,3 @@
+As we increase the modularity of a system it might become overly complex if the system is small.
+However if it is to support a large system or a growing one the modularity is frequently warrented
+and prevents the main class from getting too bloated.
