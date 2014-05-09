@@ -1,0 +1,13 @@
+Design an in memory FileSystem. Explain the datastructures and algorithms you would use 
+to design the system.
+
+A FileSystem is made of files and directories. Each directory contains a set of files and
+more directories. Since files and directories share a lot of characteristics we could implement
+them to extend a superclass that shares the common properties.
+
+Lessons Learned: 
+
+- Override all abstract methods
+- System.currentTimeMillis() can be used to get the current time in milliseconds
+- "instance of" is a great run time check for detecting if a class is of a certain type
+- After performing an instance of check it is typical to cast to the type detected
