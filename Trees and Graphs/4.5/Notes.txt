@@ -1,0 +1,4 @@
+When we implement a recursive function it is important that we are only returning once.
+
+If we have multiple returns then the final return of our function should be an aggregation of these
+returns;
