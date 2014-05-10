@@ -92,9 +92,9 @@ public Node depthFirstSearchTree(Node root, value toBeFound) {
 
 	if (root.value = toBeFound) return root;
 
-	depthFirstSearch(root);
-	depthFirstSearch(root.left);
-	depthFirstSearch(root.right);
+	depthFirstSearch(root, toBeFound);
+	depthFirstSearch(root.left, toBeFound);
+	depthFirstSearch(root.right, toBeFound);
 }
 
 /**

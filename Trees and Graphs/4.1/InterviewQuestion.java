@@ -52,7 +52,6 @@ public class InterviewQuestion {
 
 		// Return height
 		return Math.max(rightHeight, leftHeight) + 1;
-
 	}
 
 	public static boolean isBalanced(Node root) {

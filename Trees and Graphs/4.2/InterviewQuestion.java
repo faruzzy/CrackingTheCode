@@ -19,13 +19,13 @@ public class InterviewQuestion {
 		node.left.left = node4;
 		node.left.right = node5;
 
-		if (isPath(node,node2) != null) {
+		if (isPathDepthFirstSearch(node,node2) != null) {
 			System.out.println("There is a path between the two nodes");
 		} else {
 			System.out.println("There is not a path between the two nodes");
 		}
 
-		if (isPath(node,node6) != null) {
+		if (isPathBreadthFirstSearch(node,node6) != null) {
 			System.out.println("There is a path between the two nodes");
 		} else {
 			System.out.println("There is not a path between the two nodes");
@@ -33,13 +33,20 @@ public class InterviewQuestion {
 
 	}
 
+	/**
+	 * Depth first search is the same as pre-order traversal
+	 */
 	public static boolean isPathDepthFirstSearch(Node node1, Node node2) {
+		// If we've hit a loop we've been through them all didn't find it
 		if (node1 == null || node1.visited) return false;
-
-		n.visited = true;
-
-		for(Node n: node1.adjacent) {
-			if (n.data != node2.data) return isPath(n, node2);
+		
+		// We found the node
+		if (node1 == node 2) return true;
+		
+		// Search the nodes children
+		foreach (Node n : node1.adjacent) {
+			if (n.visited) continue;
+			isPathDepthFirstSearch(n, node2);
 		}
 	}
 
@@ -52,6 +59,7 @@ public class InterviewQuestion {
 		while (!q.isEmpty()) {
 			Node node = q.dequeue();
 			node.visited = true;
+			// We require a list of adjacent nodes
 			for (Node n : node.adjacent()) {
 				if (n.visited) continue;
 				n.visited = true;
