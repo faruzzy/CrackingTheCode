@@ -1,0 +1,2 @@
+1. Is this an anagram of a Palindrome?
+2. Count points of equalibrium in a 2D array.
