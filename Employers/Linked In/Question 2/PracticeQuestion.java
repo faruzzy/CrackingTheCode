@@ -4,9 +4,11 @@ public class PracticeQuestion {
         String first = "racecar";
         String two = "caac";
         String three = "caacracecar";
+        String four = "acge";
         System.out.println("The longest palindrome is: " + longestPalindrome(first));
         System.out.println("The longest palindrome is: " + longestPalindrome(two));
         System.out.println("The longest palindrome is: " + longestPalindrome(three));
+        System.out.println("The longest palindrome is: " + longestPalindrome(four));
     }
 
     public static String longestPalindrome(String str) {
