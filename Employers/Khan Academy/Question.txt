@@ -1,0 +1,2 @@
+Given a 2D array find all words in it. 
+Words can occur diagonally, horizontally, and vertically as well as a combination of all of the above.
