@@ -1,2 +1,0 @@
-1. Find the kth largest element in an unsorted array, can be done in O(n)
-2. Find the longest palindrome in a string

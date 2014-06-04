@@ -1,3 +1,0 @@
-Given an array of Strings return a hashmap that has all the anagrams of the String.
-
-Hashmap.get("cat") should return all anagrams of cat.

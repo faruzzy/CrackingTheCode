@@ -1,4 +1,0 @@
-Score a game of bowling by reading the input from STD:IN
-
-The first line is the number of balls bowled
-All subsequent lines are the number of pins knocked down for a roll

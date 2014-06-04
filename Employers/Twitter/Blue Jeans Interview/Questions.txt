@@ -1,3 +1,0 @@
-1. Given a random number generator that outputs numbers from zero to one write
-   a function that outputs a point on the unit circle
-2. Given two sorted arrays find the kth minimum
