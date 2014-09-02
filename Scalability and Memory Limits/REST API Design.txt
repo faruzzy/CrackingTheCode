@@ -12,3 +12,5 @@ is contained within the request itself.
 Being stateless makes caching easier and off loads this responsibility to the client. A field
 can be added to the HTTP Response header specifing whether a client should cache a page for future
 use.
+
+http://www.ibm.com/developerworks/webservices/library/ws-restful/
