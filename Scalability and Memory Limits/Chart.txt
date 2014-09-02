@@ -1,0 +1,7 @@
+Component                     Typical Capacity/Value
+
+Hard Drive Space                100 GB
+Memory                            4 GB
+Internet Transfer Latency     0.125 MB/s
+
+Filling this chart out can help you ballpark how much data a computer can store.

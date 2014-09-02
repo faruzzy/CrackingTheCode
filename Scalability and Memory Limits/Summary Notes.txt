@@ -29,11 +29,15 @@ hash value of the data. This can be done by picking a key related to the data, h
 mod the hash value by the number of machines and store the data on the machine with that value.
 
 3. By actual value: While distributing data across machines by hash value resulted in an arbitrary
-distribution, by considering the meaning of data we may be able to reduce system latency. 
+distribution, by considering the meaning of data we may be able to reduce system latency.
 
 For example: Consider that you're designing a system for a social networking website. While someone
 in Mexico may have friends located in other countries, it is likely most of their friends are in Mexico.
 By keeping Mexicans on one machine we might save machine hops when rendering a user's friends.
 
 4. Arbitrarily: Data gets arbitrarily broken up and we implement a lookup table to identify which
-machine holds which peice of data. 
+machine holds which peice of data.
+
+
+One useful point to consider is if the service or method you're implementing will be called multiple
+times. If it will be then preprocessing data is acceptable.

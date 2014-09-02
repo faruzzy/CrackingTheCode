@@ -1,0 +1,53 @@
+There are a number of ways to approach this problem. They center around how data is stored.
+
+Solution #1: FTP text file connection
+
+The high, low, open and close prices of stock can be stored in a text file. One text file
+for each stock. The client can then initiate an FTP download from the server to get stock
+information.
+
+Pros:
+
+Decent level of granularity in terms of user getting too much/too little data on a request.
+However the grain size is fixed.
+
+Cons:
+
+Client has to parse data from text file, easy to break if unexpected data
+in text file.
+
+
+Solution #2: SQL Server
+
+We can store all the data in SQL database. The client can then connect to SQL server and
+perform query on the database to get whatever data they want.
+
+Pros:
+
+Level of granularity is flexable. Clients are able to get whatever data they want
+including ranges of data, very flexable.
+
+Cons:
+
+Security needs to be considered if we want to limit what clients can query/can see.
+Lots of overhead and SQL database seems like over kill.
+
+
+Solution #3: XML/JSON
+
+Clients request XML/JSON that has stock data in it.
+
+Pros:
+
+Very easy to distribute and readable by both machines and humans. This is one of the
+reasons why XML is a standard data model used to share and distribute data.
+
+Most languages have a library to implement XML parsing, easy for clients to parse information.
+
+Cons:
+
+Performing any queries on data requires parsing the entire file.
+
+This solution sends clients all the information even if they only want part of it.
+
+

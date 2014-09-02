@@ -1,0 +1,14 @@
+Here's a few quick notes regarding REST API design.
+
+1. Use HTTP methods explicitly
+2. Be stateless
+3. Expose directory structure like URIs
+4. Transfer JSON or XML
+
+Being stateless helps improve performance. Servers don't have to retrieve state or context
+before servicing a request. Also all information required to generate a response to a request
+is contained within the request itself.
+
+Being stateless makes caching easier and off loads this responsibility to the client. A field
+can be added to the HTTP Response header specifing whether a client should cache a page for future
+use.
