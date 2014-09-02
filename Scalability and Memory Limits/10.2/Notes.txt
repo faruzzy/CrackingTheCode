@@ -1,0 +1,5 @@
+Optimizations in scalable questions usually center around the number of machine hops.
+
+This can be done by doing batch lookups for friends on a certain machine.
+This can be done by smartly allocatin where data goes.
+We should be hesitant to modify data due to the conncurent nature of distributed data.
